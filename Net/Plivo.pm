@@ -37,7 +37,7 @@ use JSON;
   };
   $object->add_getdigits( $params );
   $object->add_speak({ speak=>'Input not received. Thank you' });
-  my $xml = $self->{PHONE}->respond();
+  my $xml = $object->respond();
 
   print "Content-Type: text/xml\n\n";
   print $xml;
@@ -918,7 +918,7 @@ To create XML response for Plivo
   };
   $object->add_getdigits( $params );
   $object->add_speak({ speak=>'Input not received. Thank you' });
-  my $xml = $self->{PHONE}->respond();
+  my $xml = $object->respond();
 
   print "Content-Type: text/xml\n\n";
   print $xml;
