@@ -35,6 +35,13 @@ use JSON;
       speak  => 'Hello World',
       finishonkey => '#',
   };
+  
+  /**
+    speak could also be an array
+    push (@{$params->{speak}}, 'test1');
+    push (@{$params->{speak}}, 'test2');
+    push (@{$params->{speak}}, 'test3');
+  **/
   $object->add_getdigits( $params );
   $object->add_speak({ speak=>'Input not received. Thank you' });
   my $xml = $object->respond();
@@ -1059,10 +1066,9 @@ sub add_speak {
     my $self = shift;
     my $args = shift;
 
-    my @info  = qw/voice language loop/;
-    my @speak = qw/Speak/;
+    my @info  = qw/voice language loop content/;
 
-    $self->_build_response_format( 'Speak', $args, \@info, \@speak );
+    $self->_build_response_format( 'Speak', $args, \@info );
 }
 
 =head2 sub add_hangup
