@@ -6,10 +6,11 @@ Perl version Helper for Plivo
 This is a Perl version of Helper for Plivo, to make Plivo easier to use.
 
 Require
-  use LWP::UserAgent;
-  use HTTP::Request;
-  use JSON;
-  use XML::Simple;
+
+  LWP::UserAgent;
+  HTTP::Request;
+  JSON;
+  XML::Simple;
 
 For calling Plivo api
 
