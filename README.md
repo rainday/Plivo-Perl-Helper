@@ -34,7 +34,7 @@ For returning XML
         finishonkey => '#',
     };
     /*
-     speak could also pass in ass array
+     speak could also be passed in as array
      push (@{$params->{speak}}, 'test1');
      push (@{$params->{speak}}, 'test2');
      push (@{$params->{speak}}, 'test2');
