@@ -33,6 +33,12 @@ For returning XML
         speak  => 'Hello World',
         finishonkey => '#',
     };
+    /*
+     speak could also pass in ass array
+     push (@{$params->{speak}}, 'test1');
+     push (@{$params->{speak}}, 'test2');
+     push (@{$params->{speak}}, 'test2');
+    */
     $object->add_getdigits( $params );
     $object->add_speak({ speak=>'Input not received. Thank you' });
     my $xml = $object->respond();
