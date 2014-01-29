@@ -1333,7 +1333,7 @@ sub respond {
     my $self   = shift;
     my $args   = shift;
 
-    return $self->_xml_response({ data=>$self->{respond_data} });
+    return $self->_xml_response({ data=>$self->{respond_data}, no_sort=>$args->{no_sort} });
 }
 
 # create XML 
@@ -1343,5 +1343,5 @@ sub _xml_response {
     my $data = $args->{data};
 
     my $XML = XML::Simple->new;
-    return $XML->XMLout( $data, RootName=>'Response' );
+    return $XML->XMLout( $data, RootName=>'Response', NoSort=>$args->{no_sort} );
 }
